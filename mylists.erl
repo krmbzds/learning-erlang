@@ -6,3 +6,6 @@ sum([]) -> 0.
 
 map(_, []) -> [];
 map(F, [H|T]) -> [F(H)|map(F, T)].
+
+% List comprehension version
+% map(F, L) -> [F(X) || X <- L].
