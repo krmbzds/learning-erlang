@@ -1,5 +1,6 @@
 -module(lib_misc).
--export([for/3, qsort/1, pythag/1, perms/1]).
+-export([for/3, qsort/1, pythag/1, perms/1, odds_and_evens1/1,
+         odds_and_evens2/1, my_tuple_to_list/1]).
 
 % Creating our own control flows
 
@@ -57,3 +58,7 @@ odds_and_evens_acc([H|T], Odds, Evens) ->
   end;
 odds_and_evens_acc([], Odds, Evens) ->
   {lists:reverse(Odds), lists:reverse(Evens)}.
+
+% tuple_to_list implementation w/o built-in functions
+my_tuple_to_list(Tuple) ->
+  [element(I, Tuple) || I <- lists:seq(1, tuple_size(Tuple))].
